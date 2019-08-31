@@ -18,7 +18,7 @@
     }
 
     .card{
-        height: 370px;
+        height: 100%;
         color:cornflowerblue;
     }
     .h4 {
@@ -54,12 +54,14 @@
                                 <button class="btn btn-outline-danger pure-button btn-disconnect">Disconnect</button>
                             </div>
                         </center>
-                        <br>
-                        <div class="card-footer">
+                        <div >
+                            Status: <br>
                             <div id="status" class="text-center alert alert-secondary">
                                 Disconnected
                             </div>
                         </div>
+                        <div class="card-footer"></div>
+                        Incoming message: <br><br>
                         <table class="text-center table table-hover table-bordered">
                             <thead class="table-success">
                                 <tr>
@@ -94,8 +96,10 @@
                                 <input type="text" class="form-control" id="message" value="hi">
                             </div>
                             <center>
-                                <button id="btn-pub" class="btn btn-outline-success">Publish</button></center>
+                                <button id="btn-pub" class="btn btn-outline-success" style="padding:13px">Publish</button></center>
                         </div>
+                        <div class="card-footer"></div>
+                        Incoming message: <br><br>
                         <table class="text-center table table-hover table-bordered">
                             <thead class="table-success">
                                 <tr>
@@ -127,8 +131,12 @@
                             </div>
 
                             <center>
-                                <button id="btn-sub" class="btn btn-outline-success">Subscribe</button></center>
-                        </div>
+                                <button id="btn-sub" class="btn btn-outline-success">Subscribe</button>
+                                <button id="btn-unsub" class="btn btn-outline-danger">Unsubscribe</button>
+                            </center>
+                        </div><br><br><br><br>
+                        <div class="card-footer"></div>
+                        Incoming message: <br><br>
                         <table class="text-center table table-hover table-bordered">
                             <thead class="table-success">
                                 <tr>
