@@ -67,6 +67,11 @@ $('#btn-connect').click(function(){
 				} else {
 					console.log("published")
 					Swal.fire('Published successfully!')
+					var row = $("<tr>");
+					$("<td>").text(topic).appendTo($(row));
+					$("<td>").text(payload).appendTo($(row));
+					$("<td>").text(moment().format('MMMM Do YYYY, h:mm:ss a')).appendTo($(row));
+					$("#tbl-body-pub").append($(row));
 				}
 			});
 			
@@ -93,6 +98,10 @@ $('#btn-connect').click(function(){
 						text: 'An error occurs!',
 					  });
 				} else {
+					var row = $("<tr>");
+					$("<td>").text(topic).appendTo($(row));
+					$("<td>").text(moment().format('MMMM Do YYYY, h:mm:ss a')).appendTo($(row));
+					$("#tbl-body-sub").append($(row));
 					Swal.fire('Subscribed successfully!');
 				}
 			});
