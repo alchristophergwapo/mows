@@ -109,6 +109,10 @@ $('#btn-connect').click(function(){
 		}
 			
 	})
+	$("#btn-unsub").click(function() {
+			$("#topic-sub").val("");
+			Swal.fire("Unsubscribed successfully")
+	})
 	client.on("message", function (topic, payload) {
 		// console.log([topic, payload].join(": "));
 		var row = $("<tr>");
