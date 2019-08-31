@@ -98,7 +98,7 @@ $('#btn-connect').click(function(){
 						text: 'An error occurs!',
 					  });
 				} else {
-					var row = $("<tr>");
+					var row = $("<tr>").attr("id", "mysub");
 					$("<td>").text(topic).appendTo($(row));
 					$("<td>").text(moment().format('MMMM Do YYYY, h:mm:ss a')).appendTo($(row));
 					$("#tbl-body-sub").append($(row));
@@ -111,10 +111,11 @@ $('#btn-connect').click(function(){
 	})
 	$("#btn-unsub").click(function() {
 			$("#topic-sub").val("");
+			$("#mysub").remove();
 			Swal.fire("Unsubscribed successfully")
 	})
 	client.on("message", function (topic, payload) {
-		// console.log([topic, payload].join(": "));
+		console.log([topic, payload].join(": "));
 		var row = $("<tr>");
 		$("<td>").text(topic).appendTo($(row));
 		$("<td>").text(payload).appendTo($(row));
