@@ -23,6 +23,15 @@ $('#btn-connect').click(function(){
 		  })
 		console.log("success");
 	});
+	client.on("message", function (topic, payload) {
+		console.log([topic, payload].join(": "));
+		var row = $("<tr>");
+		$("<td>").text(topic).appendTo($(row));
+		$("<td>").text(payload).appendTo($(row));
+		$("<td>").text(moment().format('MMMM Do YYYY, h:mm:ss a')).appendTo($(row));
+		$("#tbl-body").append($(row));
+
+  })
 
 	$(".btn-disconnect").click(function() {
 		Swal.fire({
@@ -126,13 +135,5 @@ $('#btn-connect').click(function(){
 				}
 			});
 	})
-	client.on("message", function (topic, payload) {
-		console.log([topic, payload].join(": "));
-		var row = $("<tr>");
-		$("<td>").text(topic).appendTo($(row));
-		$("<td>").text(payload).appendTo($(row));
-		$("<td>").text(moment().format('MMMM Do YYYY, h:mm:ss a')).appendTo($(row));
-		$("#tbl-body").append($(row));
-
-  })
+	
 });
