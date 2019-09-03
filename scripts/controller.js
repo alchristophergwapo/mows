@@ -3,6 +3,9 @@
 $('#btn-connect').click(function(){
 	client = mqtt.connect("ws://broker.hivemq.com:8000/mqtt");
 	client.subscribe($("#topic").val());
+	
+	
+
 	console.log('connect button clicked');
 	$("#status").text("Connecting");
 	$("#status").removeClass("alert-secondary");
@@ -80,8 +83,8 @@ $('#btn-connect').click(function(){
 
 	});
 	$("#btn-sub").click(function() {
-		var subscribe = $("#topic-sub").val();
 		var topic = $("#topic").val();
+		var subscribe = $("#topic-sub").val();
 		if (subscribe != topic) {
 			Swal.fire({
 			  type: 'error',
@@ -110,9 +113,18 @@ $('#btn-connect').click(function(){
 			
 	})
 	$("#btn-unsub").click(function() {
-			$("#topic-sub").val("");
-			$("#mysub").remove();
-			Swal.fire("Unsubscribed successfully")
+			var topic = $("#topic").val();
+			client.unsubscribe(topic, function(err) {
+				if(err) {
+					Swal.fire({
+						type: 'error',
+						title: 'Oops...',
+						text: 'An error occurs!',
+					  });
+				} else {
+					Swal.fire("Unsubscribed successfully");
+				}
+			});
 	})
 	client.on("message", function (topic, payload) {
 		console.log([topic, payload].join(": "));

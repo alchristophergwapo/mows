@@ -26,6 +26,14 @@
         color: black;
         border-radius: 10px;
     }
+    .my-custom-scrollbar {
+        position: relative;
+        height: 300px;
+        overflow: auto;
+    }
+    .table-wrapper-scroll-y {
+        display: block;
+    }
 </style>
 
 <body>
@@ -60,19 +68,20 @@
                             </div>
                         </div>
                         <div class="card-footer"></div>
-                        Incoming message: <br><br>
-                        <table class="text-center table table-hover table-bordered">
-                            <thead class="table-success">
-                                <tr>
-                                    <th>Topic</th>
-                                    <th>Message</th>
-                                    <th>Timestamp</th>
-                                </tr>
-                            </thead>
-                            <tbody id="tbl-body">
-             
-                            </tbody>
-                        </table>
+                        <div class="table-wrapper-scroll-y my-custom-scrollbar">Incoming message: <br><br>
+                            <table class="text-center table table-hover table-bordered">
+                                <thead class="table-success">
+                                    <tr>
+                                        <th>Topic</th>
+                                        <th>Message</th>
+                                        <th>Timestamp</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tbl-body">
+                
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -98,19 +107,20 @@
                                 <button id="btn-pub" class="btn btn-outline-success" style="padding:13px">Publish</button></center>
                         </div>
                         <div class="card-footer"></div>
-                        Incoming message: <br><br>
-                        <table class="text-center table table-hover table-bordered">
-                            <thead class="table-success">
-                                <tr>
-                                    <th>Topic</th>
-                                    <th>Message</th>
-                                    <th>Timestamp</th>
-                                </tr>
-                            </thead>
-                            <tbody id="tbl-body-pub">
-             
-                            </tbody>
-                        </table>
+                        <div class="table-wrapper-scroll-y my-custom-scrollbar"> message: <br><br>
+                            <table class="text-center table table-hover table-bordered">
+                                <thead class="table-success">
+                                    <tr>
+                                        <th>Topic</th>
+                                        <th>Message</th>
+                                        <th>Timestamp</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tbl-body-pub">
+                
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -135,18 +145,19 @@
                             </center>
                         </div><br><br><br><br>
                         <div class="card-footer"></div>
-                        Incoming message: <br><br>
-                        <table class="text-center table table-hover table-bordered">
-                            <thead class="table-success">
-                                <tr>
-                                    <th>Topic</th>
-                                    <th>Timestamp</th>
-                                </tr>
-                            </thead>
-                            <tbody id="tbl-body-sub">
-             
-                            </tbody>
-                        </table>
+                        <div class="table-wrapper-scroll-y my-custom-scrollbar">Incoming message: <br><br>
+                            <table class="text-center table table-hover table-bordered">
+                                <thead class="table-success">
+                                    <tr>
+                                        <th>Topic</th>
+                                        <th>Timestamp</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tbl-body-sub">
+                
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
