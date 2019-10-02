@@ -23,8 +23,9 @@ html body{
 .jumbotron {
     background-color: antiquewhite;
 }
-.footer {
+.page-footer {
     height: 10%;
+    background-color: antiquewhite;
 }
 .wrapper {
     background-size: contain;
